@@ -89,20 +89,22 @@ void tri_bulles(struct PoulDonnees **listePouls, struct PoulDonnees **poulsTries
 
 struct PoulDonnees recherche(int maxOrMin, struct PoulDonnees **poulsTries)
 {
-	return struct PoulDonnees;
+	return *poulsTries[0];
 }
 
 int menu()
 {
-
+	return 0;
 }
 
 int main()
 {
 	struct PoulDonnees *listePouls[1];
 	struct PoulDonnees *poulsTries[1];
+	int maxOrMin = 0;
 	listePouls[0] = NULL;
-	tri_bulles(listePouls, poulsTries);
+	poulsTries[0] = NULL;
+	tri_bulles(listePouls, poulsTries, maxOrMin);
 	lireFichier(listePouls);
 	libererDonneesPoul(listePouls);
 	_getch();
