@@ -13,7 +13,7 @@ struct PoulDonnees
 	struct PoulDonnees *next;
 };
 
-void libererTransitions(struct lTransitions **listePouls)
+void libererDonneesPoul(struct PoulDonnees **listePouls)
 {
 		free(listePouls[0]);
 }
@@ -21,7 +21,7 @@ void libererTransitions(struct lTransitions **listePouls)
 // Crée une transition avec un character et un état final
 // c  - caractère de la transition
 // e2 - état suivant après la lecture du caractère c
-struct PoulDonnees *creerTransition(int poul, int temps)
+struct PoulDonnees *creerDonneePoul(int poul, int temps)
 {
 	struct PoulDonnees *t = NULL;
 	//allouer la transition et assigner les valeurs
@@ -36,11 +36,11 @@ struct PoulDonnees *creerTransition(int poul, int temps)
 // Ajout une transition dans l'automate. La transition sera rajoutée par la tête de la liste
 // e1  - etat initial de la transition. L'état correspond à l'indice du tableau 'automate'
 // t - transition
-void ajouterTransition(struct PoulDonnees **listePouls, struct PoulDonnees *t)
+void ajouterDonneePoul(struct PoulDonnees **listePouls, struct PoulDonnees *donneePoul)
 {
 	//ajouter la transition par la tête de liste dans le tableau automate à l'index 'e1'. ATTENTION a maintenir l'intégralité de la liste chaînée	
-	t->next = listePouls[0];
-	listePouls[0] = t;
+	donneePoul->next = listePouls[0];
+	listePouls[0] = donneePoul;
 }
 
 void lireFichier(struct PoulDonnees **listePouls)
@@ -68,10 +68,10 @@ void lireFichier(struct PoulDonnees **listePouls)
 		sscanf(tab, "%d %d", &poul, &temps);
 
 		//Créer une transition avec c et e2 (faire appel à des fonctions déjà définies dans ce même fichier)
-		t = creerTransition(poul, temps);
+		t = creerDonneePoul(poul, temps);
 
 		//Ajouter la transition créée dans l'automate en utilisant e1 comme indice du tableau 'automate' (faire appel à des fonctions déjà définies dans ce même fichier)
-		ajouterTransition(listePouls, t);
+		ajouterDonneePoul(listePouls, t);
 	}
 
 	// Fermer le fichier
@@ -83,7 +83,7 @@ int main()
 	struct PoulDonnees *listePouls[1];
 	listePouls[0] = NULL;
 	lireFichier(listePouls);
-	libererTransitions(listePouls);
+	libererDonneesPoul(listePouls);
 	_getch();
 	return 0;
 }
