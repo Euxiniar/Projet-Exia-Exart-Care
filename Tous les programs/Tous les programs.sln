@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2008
+VisualStudioVersion = 15.0.27004.2002
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Generation param.h", "..\Generation param.h\Generation param.h\Generation param.h.vcxproj", "{B03F404F-F6E3-4E64-ACE8-15E3DB8F670D}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tri et Recherche programme C", "..\Tri et Recherche programme C\Tri et Recherche programme C\Tri et Recherche programme C.vcxproj", "{929B8C92-3826-4DE9-8A0B-A7E43DD7E2A4}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Coeur_LEDs", "..\Programme Arduino Led\Coeur_LEDs\Coeur_LEDs.vcxproj", "{C5F80730-F44F-4478-BDAE-6634EFC2CA88}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +33,12 @@ Global
 		{929B8C92-3826-4DE9-8A0B-A7E43DD7E2A4}.Release|x64.Build.0 = Release|x64
 		{929B8C92-3826-4DE9-8A0B-A7E43DD7E2A4}.Release|x86.ActiveCfg = Release|Win32
 		{929B8C92-3826-4DE9-8A0B-A7E43DD7E2A4}.Release|x86.Build.0 = Release|Win32
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Debug|x64.ActiveCfg = Debug|Win32
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Debug|x86.ActiveCfg = Debug|Win32
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Debug|x86.Build.0 = Debug|Win32
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Release|x64.ActiveCfg = Release|Win32
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Release|x86.ActiveCfg = Release|Win32
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
