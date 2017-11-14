@@ -34,6 +34,7 @@ void showMenu(int *modeAffichage, int *nbLedsAllumees, int *ledAllumee)
 				*ledAllumee = -1;
 			}
 		}
+		break;
 	case 3:
 		while (*nbLedsAllumees < 0)
 		{

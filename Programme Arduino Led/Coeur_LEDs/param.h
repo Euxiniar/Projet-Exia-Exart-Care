@@ -1,4 +1,4 @@
 #pragma once
 
-int modeAffichage = 1;
-int nbLedsAllumees = 5;
+int modeAffichage = 2;
+int ledAllumee = 6;
