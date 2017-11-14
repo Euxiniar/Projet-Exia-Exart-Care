@@ -78,10 +78,31 @@ void lireFichier(struct PoulDonnees **listePouls)
 	fclose(f);
 }
 
+void affichage_csv(struct PoulDonnees **listePouls)
+{
+
+}
+
+void tri_bulles(struct PoulDonnees **listePouls, struct PoulDonnees **poulsTries, int sens)
+{
+}
+
+struct PoulDonnees recherche(int maxOrMin, struct PoulDonnees **poulsTries)
+{
+	return struct PoulDonnees;
+}
+
+int menu()
+{
+
+}
+
 int main()
 {
 	struct PoulDonnees *listePouls[1];
+	struct PoulDonnees *poulsTries[1];
 	listePouls[0] = NULL;
+	tri_bulles(listePouls, poulsTries);
 	lireFichier(listePouls);
 	libererTransitions(listePouls);
 	_getch();
