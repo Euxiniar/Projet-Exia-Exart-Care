@@ -65,7 +65,7 @@ void lireFichier(struct PoulDonnees **listePouls)
 	while (fgets(tab, TAILLETAB, f) != NULL)
 	{
 		//Récupérer dans les variables e1, c et e2 les valeurs lues dans le fichier et qui ont été stockées dans tab à l'aide de la fonction sscanf()
-		sscanf(tab, "%d %d", &poul, &temps);
+		sscanf(tab, "%d ;%d", &poul, &temps);
 
 		//Créer une transition avec c et e2 (faire appel à des fonctions déjà définies dans ce même fichier)
 		t = creerDonneePoul(poul, temps);
