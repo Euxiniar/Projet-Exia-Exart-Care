@@ -1,21 +1,8 @@
 ﻿################################################################################
-# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+# Ce fichier .gitignore a été automatiquement créé par Microsoft(R) Visual Studio.
 ################################################################################
 
-/Tri et Recherche programme C/.vs/*
-/Tri et Recherche programme C/Debug
-/Tri et Recherche programme C/Tri et Recherche programme C/Debug
-/Tri et Recherche programme C/Tri et Recherche programme C/x64/Debug/*
-/Tri et Recherche programme C/Tri et Recherche programme C/x64/Debug
-/Tri et Recherche programme C/x64/*
-/Generation param.h/.vs/*
-/Generation param.h/Debug
-/Generation param.h/Generation param.h/Debug
-/Tous les programs/Debug
+/Module_cardio_conversion_fixe/Debug/*
+/Module_cardio_conversion_fixe/Debug
+/Module_cardio_conversion_fixe/__vm
 /Tous les programs/.vs/*
-/Generation param.h/Generation param.h/x64/Debug
-/Programme Arduino Led/Coeur_LEDs/Debug
-/Programme Arduino Led/Coeur_LEDs/__vm
-/Tous les programs/x64/Debug
-/module Tri Recherche en C (V. Tableau)/Debug
-/module Tri Recherche en C (V. Tableau)/x64/Debug
