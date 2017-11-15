@@ -82,7 +82,12 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="coeur.h" />
+    <ClInclude Include="param.h" />
     <ClInclude Include="__vm\.Coeur_LEDs.vsarduino.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="coeur.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
