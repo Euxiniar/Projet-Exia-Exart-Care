@@ -1,6 +1,6 @@
 #pragma once
 #include "param.h"
-#include "coeur.c"
+//#include "coeur.c"
 
 void allLEDs(int *tab);
 void uneLEDsurX(int x, int *tab);
