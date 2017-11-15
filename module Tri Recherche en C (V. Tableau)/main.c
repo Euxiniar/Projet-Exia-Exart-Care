@@ -59,11 +59,19 @@ void affichage_listePoul(struct PoulDonnees listePouls[], int tailleTab)
 	}
 }
 
+void triABulle(struct PoulDonnees listePouls[], int *permute, int caseSelect)
+{
+	struct PoulDonnees temp;
+	temp = listePouls[caseSelect - 1];
+	listePouls[caseSelect - 1] = listePouls[caseSelect];
+	listePouls[caseSelect] = temp;
+	*permute = 1;
+}
 void triageCroissant(struct PoulDonnees listePouls[], int tailleTab, int poulOuTemps)
 {
 	//int donneeDeTriage = (poulOuTemps == 0 ? 0 : (poulOuTemps == 1 ? 1 : -1));
 	int permute, j = 0;
-	struct PoulDonnees temp;
+	
 
 	do
 	{
@@ -76,20 +84,14 @@ void triageCroissant(struct PoulDonnees listePouls[], int tailleTab, int poulOuT
 				{
 					if (listePouls[i - 1].poul > listePouls[i].poul)
 					{
-						temp = listePouls[i - 1];
-						listePouls[i - 1] = listePouls[i];
-						listePouls[i] = temp;
-						permute = 1;
+						triABulle(listePouls, &permute, i);
 					}
 				}
 				else if (poulOuTemps == 1)
 				{
 					if (listePouls[i - 1].temps > listePouls[i].temps)
 					{
-						temp = listePouls[i - 1];
-						listePouls[i - 1] = listePouls[i];
-						listePouls[i] = temp;
-						permute = 1;
+						triABulle(listePouls, &permute, i);
 					}
 				}
 			}
@@ -106,8 +108,6 @@ void triageDecroissant(struct PoulDonnees listePouls[], int tailleTab, int poulO
 {
 	//int donneeDeTriage = (poulOuTemps == 0 ? 0 : (poulOuTemps == 1 ? 1 : -1));
 	int permute, j = 0;
-	struct PoulDonnees temp;
-
 	do
 	{
 		permute = 0;
@@ -119,20 +119,14 @@ void triageDecroissant(struct PoulDonnees listePouls[], int tailleTab, int poulO
 				{
 					if (listePouls[i - 1].poul < listePouls[i].poul)
 					{
-						temp = listePouls[i - 1];
-						listePouls[i - 1] = listePouls[i];
-						listePouls[i] = temp;
-						permute = 1;
+						triABulle(listePouls, &permute, i);
 					}
 				}
 				else if (poulOuTemps == 1)
 				{
 					if (listePouls[i - 1].temps < listePouls[i].temps)
 					{
-						temp = listePouls[i - 1];
-						listePouls[i - 1] = listePouls[i];
-						listePouls[i] = temp;
-						permute = 1;
+						triABulle(listePouls, &permute, i);
 					}
 				}
 			}
@@ -152,7 +146,7 @@ int main()
 	int maxOrMin = 0;
 	lireFichier(listePouls);
 	int tailleListePouls = getTailleListePouls(listePouls);
-	triageCroissant(listePouls, tailleListePouls, 0);
+	triageDecroissant(listePouls, tailleListePouls, 0);
 	affichage_listePoul(listePouls, tailleListePouls);
 	_getch();
 	return 0;
