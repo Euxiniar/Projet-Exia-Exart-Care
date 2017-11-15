@@ -11,6 +11,7 @@ struct PoulDonnees
 	int poul;
 	int temps;
 	struct PoulDonnees *next;
+	struct PoulDonnees *last;
 };
 
 void libererDonneesPoul(struct PoulDonnees **listePouls)
@@ -38,9 +39,16 @@ struct PoulDonnees *creerDonneePoul(int poul, int temps)
 // t - transition
 void ajouterDonneePoul(struct PoulDonnees **listePouls, struct PoulDonnees *donneePoul)
 {
-	//ajouter la transition par la tête de liste dans le tableau automate à l'index 'e1'. ATTENTION a maintenir l'intégralité de la liste chaînée	
-	donneePoul->next = listePouls[0];
-	listePouls[0] = donneePoul;
+	if (listePouls[0] == NULL)
+	{
+		listePouls[0] = donneePoul;
+		listePouls[0]->last = donneePoul;
+	}
+	else
+	{
+		listePouls[0]->last->next = donneePoul;
+		listePouls[0]->last = donneePoul;
+	}
 }
 
 void lireFichier(struct PoulDonnees **listePouls)
@@ -78,9 +86,15 @@ void lireFichier(struct PoulDonnees **listePouls)
 	fclose(f);
 }
 
-void affichage_csv(struct PoulDonnees **listePouls)
+void affichage_csv(struct PoulDonnees *listePouls)
 {
-
+	struct PoulDonnees *buf = listePouls;
+	while (buf != NULL)
+	{
+		printf("%d %d\n", buf->poul, buf->temps);
+		buf = listePouls->next;
+		listePouls = listePouls->next;
+	}
 }
 
 void tri_bulles(struct PoulDonnees **listePouls, struct PoulDonnees **poulsTries, int sens)
@@ -104,8 +118,8 @@ int main()
 	int maxOrMin = 0;
 	listePouls[0] = NULL;
 	poulsTries[0] = NULL;
-	tri_bulles(listePouls, poulsTries, maxOrMin);
 	lireFichier(listePouls);
+	affichage_csv(listePouls[0]);
 	libererDonneesPoul(listePouls);
 	_getch();
 	return 0;
