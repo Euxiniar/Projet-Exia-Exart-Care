@@ -2,10 +2,10 @@
 
 void showMenu(int *modeAffichage, int *nbLedsAllumees, int *ledAllumee)
 {
-	printf("Bonjour\nChoisissez mes parametres d'affichage de vos Leds :"
+	printf("Bonjour\nChoisissez les parametres d'affichage de vos Leds :"
 		"\nTapez 0 pour un clignotement au rythme du coeur"
 		"\nTapez 1 pour choisir d'allumer une Led sur X"
-		"\nTapez 2 pour choisir d'allumer une Led que vous choisirez"
+		"\nTapez 2 pour allumer une Led que vous choisirez"
 		"\nTapez 3 Pour allumer les Leds en mode chenille\n");
 	scanf("%d", modeAffichage);
 	switch (*modeAffichage)
