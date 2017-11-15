@@ -164,3 +164,26 @@ void recherchePoulsSelonTemps(struct PoulDonnees listePouls[], int *tailleTab, i
 	*tailleTab = getTailleListePouls(listePouls);
 }
 
+void getMoyennePoulsSelonTemps(struct PoulDonnees listePouls[], int * tailleTab, int tempsMin, int tempsMax, double *poulMoyen)
+{
+	struct PoulDonnees buf[TAILLETAB];
+	int tailleBuf = 0;
+	int sum = 0;
+
+	int y = 0;
+	for (int i = 0; i < *tailleTab; i++)
+	{
+		if (listePouls[i].temps >= tempsMin && listePouls[i].temps <= tempsMax)
+		{
+			buf[y] = listePouls[i];
+			y++;
+		}
+	}
+	tailleBuf = getTailleListePouls(buf);
+	for (int i = 0; i < tailleBuf; i++)
+	{
+		sum += buf[i].poul;
+	}
+	*poulMoyen = (double)sum / (double)tailleBuf;
+}
+

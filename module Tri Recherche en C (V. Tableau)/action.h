@@ -24,3 +24,4 @@ void triageDecroissant(struct PoulDonnees listePouls[], int *tailleTab, int poul
 void copyTabPoulDonnees(struct PoulDonnees listePoulsToCopy[], int *tailleTab, struct PoulDonnees tabQuiALaCopie[]);
 void clearTabPoulDonnees(struct PoulDonnees listePouls[]);
 void recherchePoulsSelonTemps(struct PoulDonnees listePouls[], int *tailleTab, int temps);
+void getMoyennePoulsSelonTemps(struct PoulDonnees listePouls[], int *tailleTab, int tempsMin, int tempsMax, double *poulMoyen);

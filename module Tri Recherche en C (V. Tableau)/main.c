@@ -34,6 +34,11 @@ int main()
 	affichage_listePoul(listePoulsCopy, &tailleListePouls);
 	printf("\n");
 
+	double poulMoyen = 0;
+	copyTabPoulDonnees(listePouls, &tailleListePouls, listePoulsCopy);
+	getMoyennePoulsSelonTemps(listePoulsCopy, &tailleListePouls, 0, 50, &poulMoyen);
+	printf("\n");
+
 	_getch();
 	return 0;
 }
