@@ -55,7 +55,7 @@ void triABulle(struct PoulDonnees listePouls[], int *permute, int caseSelect)
 	*permute = 1;
 }
 
-void triageCroissant(struct PoulDonnees listePouls[], int *tailleTab, int poulOuTemps)
+void triCroissant(struct PoulDonnees listePouls[], int *tailleTab, int poulOuTemps)
 {
 	int permute, j = 0;
 
@@ -90,7 +90,7 @@ void triageCroissant(struct PoulDonnees listePouls[], int *tailleTab, int poulOu
 	} while (permute);
 }
 
-void triageDecroissant(struct PoulDonnees listePouls[], int *tailleTab, int poulOuTemps)
+void triDecroissant(struct PoulDonnees listePouls[], int *tailleTab, int poulOuTemps)
 {
 	int permute, j = 0;
 	do
@@ -185,5 +185,27 @@ void getMoyennePoulsSelonTemps(struct PoulDonnees listePouls[], int * tailleTab,
 		sum += buf[i].poul;
 	}
 	*poulMoyen = (double)sum / (double)tailleBuf;
+}
+
+//struct PoulDonnees searchValue(struct PoulDonnees listePouls[], int * tailleTab, int value, int poulOuTemps)
+//{
+//	return listePouls[0];
+//}
+
+void showMaxAndMin(struct PoulDonnees listePouls[], int * tailleTab)
+{
+	
+	int min, max;
+	if (*tailleTab > 0)
+	{
+		max = listePouls[0].poul;
+		min = listePouls[0].poul;
+	}
+	for (int i = 0; i < *tailleTab; i++)
+	{
+		max = (max < listePouls[i].poul ? listePouls[i].poul : max);
+		min = (min > listePouls[i].poul ? listePouls[i].poul : min);
+	}
+	printf("%d %d", min, max);
 }
 

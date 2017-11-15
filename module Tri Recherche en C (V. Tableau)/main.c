@@ -15,22 +15,22 @@ int main()
 	printf("\n");
 
 	copyTabPoulDonnees(listePouls, &tailleListePouls, listePoulsCopy);
-	triageCroissant(listePoulsCopy, &tailleListePouls, 0);
+	triCroissant(listePoulsCopy, &tailleListePouls, 0);
 	affichage_listePoul(listePoulsCopy, &tailleListePouls);
 	printf("\n");
 
 	copyTabPoulDonnees(listePouls, &tailleListePouls, listePoulsCopy);
-	triageCroissant(listePoulsCopy, &tailleListePouls, 1);
+	triCroissant(listePoulsCopy, &tailleListePouls, 1);
 	affichage_listePoul(listePoulsCopy, &tailleListePouls);
 	printf("\n");
 
 	copyTabPoulDonnees(listePouls, &tailleListePouls, listePoulsCopy);
-	triageDecroissant(listePoulsCopy, &tailleListePouls, 0);
+	triDecroissant(listePoulsCopy, &tailleListePouls, 0);
 	affichage_listePoul(listePoulsCopy, &tailleListePouls);
 	printf("\n");
 
 	copyTabPoulDonnees(listePouls, &tailleListePouls, listePoulsCopy);
-	triageDecroissant(listePoulsCopy, &tailleListePouls, 1);
+	triDecroissant(listePoulsCopy, &tailleListePouls, 1);
 	affichage_listePoul(listePoulsCopy, &tailleListePouls);
 	printf("\n");
 
@@ -39,6 +39,8 @@ int main()
 	getMoyennePoulsSelonTemps(listePoulsCopy, &tailleListePouls, 0, 20, &poulMoyen);
 	printf("\n");
 
+	copyTabPoulDonnees(listePouls, &tailleListePouls, listePoulsCopy);
+	showMaxAndMin(listePoulsCopy, &tailleListePouls);
 	_getch();
 	return 0;
 }
