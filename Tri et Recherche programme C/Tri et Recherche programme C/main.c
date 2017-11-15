@@ -97,7 +97,7 @@ void affichage_csv(struct PoulDonnees *listePouls)
 	}
 }
 
-void tri_bulles(struct PoulDonnees **listePouls, struct PoulDonnees **poulsTries, int sens)
+void tri_bulles(struct PoulDonnees *listePouls, struct PoulDonnees **poulsTries, int sens)
 {
 }
 

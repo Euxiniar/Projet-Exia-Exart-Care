@@ -37,9 +37,9 @@ void showMenu(int *modeAffichage, int *nbLedsAllumees, int *ledAllumee)
 	case 3:
 		while (*nbLedsAllumees < 0)
 		{
-			printf("\nTapez une valeur comprise entre 1 et 3 : ");
+			printf("\nTapez une valeur comprise entre 1 et 5 : ");
 			scanf("%d", nbLedsAllumees);
-			if (*nbLedsAllumees < 1 || *nbLedsAllumees > 3)
+			if (*nbLedsAllumees < 1 || *nbLedsAllumees > 5)
 			{
 				printf("\nVous n'avez pas entre une valeur comprise entre 1 et 10 !\n");
 				*nbLedsAllumees = -1;
