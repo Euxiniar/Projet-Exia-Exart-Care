@@ -38,9 +38,9 @@ int getTailleListePouls(struct PoulDonnees listePouls[])
 	return i;
 }
 
-void affichage_listePoul(struct PoulDonnees listePouls[], int tailleTab)
+void affichage_listePoul(struct PoulDonnees listePouls[], int *tailleTab)
 {
-	for (int i = 0; i < tailleTab; i++)
+	for (int i = 0; i < *tailleTab; i++)
 	{
 		printf("%d;%d\n", listePouls[i].poul, listePouls[i].temps);
 	}
@@ -55,17 +55,16 @@ void triABulle(struct PoulDonnees listePouls[], int *permute, int caseSelect)
 	*permute = 1;
 }
 
-void triageCroissant(struct PoulDonnees listePouls[], int tailleTab, int poulOuTemps)
+void triageCroissant(struct PoulDonnees listePouls[], int *tailleTab, int poulOuTemps)
 {
 	int permute, j = 0;
-
 
 	do
 	{
 		permute = 0;
 		if (poulOuTemps == 0 || poulOuTemps == 1)
 		{
-			for (int i = 1; i < tailleTab - j; i++)
+			for (int i = 1; i < *tailleTab - j; i++)
 			{
 				if (poulOuTemps == 0)
 				{
@@ -91,7 +90,7 @@ void triageCroissant(struct PoulDonnees listePouls[], int tailleTab, int poulOuT
 	} while (permute);
 }
 
-void triageDecroissant(struct PoulDonnees listePouls[], int tailleTab, int poulOuTemps)
+void triageDecroissant(struct PoulDonnees listePouls[], int *tailleTab, int poulOuTemps)
 {
 	int permute, j = 0;
 	do
@@ -99,7 +98,7 @@ void triageDecroissant(struct PoulDonnees listePouls[], int tailleTab, int poulO
 		permute = 0;
 		if (poulOuTemps == 0 || poulOuTemps == 1)
 		{
-			for (int i = 1; i < tailleTab - j; i++)
+			for (int i = 1; i < *tailleTab - j; i++)
 			{
 				if (poulOuTemps == 0)
 				{
@@ -124,3 +123,44 @@ void triageDecroissant(struct PoulDonnees listePouls[], int tailleTab, int poulO
 		j++;
 	} while (permute);
 }
+
+void copyTabPoulDonnees(struct PoulDonnees listePoulsToCopy[], int *tailleTab, struct PoulDonnees tabQuiALaCopie[])
+{
+	clearTabPoulDonnees(tabQuiALaCopie);
+	*tailleTab = getTailleListePouls(listePoulsToCopy);
+
+	for (int i = 0; i < *tailleTab; i++)
+	{
+		tabQuiALaCopie[i] = listePoulsToCopy[i];
+	}
+}
+
+void clearTabPoulDonnees(struct PoulDonnees listePouls[])
+{
+	int i = 0;
+	while (listePouls[i].poul >= 0)
+	{
+		listePouls[i].poul = -1;
+		listePouls[i].temps = -1;
+		i++;
+	}
+}
+
+void recherchePoulsSelonTemps(struct PoulDonnees listePouls[], int *tailleTab, int temps)
+{
+	struct PoulDonnees buf[TAILLETAB];
+	
+	int y = 0;
+	for (int i = 0; i < *tailleTab; i++)
+	{
+		if (listePouls[i].temps == temps)
+		{
+			buf[y] = listePouls[i];
+			y++;
+		}
+	}
+	clearTabPoulDonnees(listePouls);
+	copyTabPoulDonnees(buf, tailleTab, listePouls);
+	*tailleTab = getTailleListePouls(listePouls);
+}
+
