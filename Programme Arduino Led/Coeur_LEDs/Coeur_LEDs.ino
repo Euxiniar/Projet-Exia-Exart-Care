@@ -14,21 +14,34 @@ void setup() {
 	{
 		pinMode(tab[i], OUTPUT);
 	}
+	pinMode(A0, OUTPUT);
 }
 
 // the loop function runs over and over again until power down or reset
-void loop() 
+void loop()
 {
+	
 	int param = modeAffichage;
 	switch (param)
 	{
 	case 0: allLEDs(tab); break;
-	case 1: uneLEDsurX(nbLedsAllumees); break;
-	case 2: LEDX(LedsAllumees); break;
-	case 3: chenille(nbLedsAllumees); break;
+	case 1: uneLEDsurX(nbLedsAllumees, tab); break;
+	case 2: LEDX(ledAllumee, tab); break;
+	case 3: chenille(nbLedsAllumees , tab); break;
 	default: break;
+	}/*
+	int x = 3;
+	for (int i = 0; i < x; i++)
+	{
+	digitalWrite(tab[i], HIGH);
+	digitalWrite(tab[i + 10 - x], LOW);
+	delay(500);
 	}
-	//allLEDs(tab);
 
-	
+	for (int i = x; i < 10; i++)
+	{
+		digitalWrite(tab[i - x], LOW);
+		digitalWrite(tab[i], HIGH);
+		delay(500);
+	}*/
 }

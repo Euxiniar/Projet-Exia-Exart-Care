@@ -1,5 +1,5 @@
 #pragma once
 
-int modeAffichage = 0;
-int nbLedsAllumees = 0;
-int LedsAllumees = 0;
+int modeAffichage = 3;
+int nbLedsAllumees = 3;
+int ledAllumee = -1;
