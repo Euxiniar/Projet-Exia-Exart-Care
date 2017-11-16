@@ -201,6 +201,6 @@ void showMaxAndMin(struct PoulDonnees listePouls[], int * tailleTab)
 		max = (max < listePouls[i].poul ? listePouls[i].poul : max);
 		min = (min > listePouls[i].poul ? listePouls[i].poul : min);
 	}
-	printf("%d %d", min, max);
+	printf("Le poul maximum est : %d, le poul minimum est : %d", min, max);
 }
 
