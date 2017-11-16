@@ -6,6 +6,7 @@ void lireFichier(struct PoulDonnees listePouls[])
 	int poul, temps;
 	char tab[TAILLETAB];
 
+	//ouverture du fichier
 	f = fopen("./Battements.csv", "r");
 
 	if (!f)
@@ -21,8 +22,11 @@ void lireFichier(struct PoulDonnees listePouls[])
 
 		sscanf(tab, "%d ;%d", &poul, &temps);
 
-		listePouls[i].poul = poul;
-		listePouls[i].temps = temps;
+		if (tab[0] != '\n')
+		{
+			listePouls[i].poul = poul;
+			listePouls[i].temps = temps;
+		}
 		i++;
 	}
 	fclose(f);

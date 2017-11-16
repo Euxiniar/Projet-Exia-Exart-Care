@@ -9,6 +9,7 @@ void showMenu(struct PoulDonnees listePouls[], int *tailleTab)
 	int tempsMax;
 	double poulMoyen;
 
+	//Affichage du menu à l'utilisateur
 	printf("Bienvenue\n");
 	printf("Tapez 0 pour afficher les donnees dans l'ordre du fichier .csv\n");
 	printf("Tapez 1 pour afficher les donnees dans l'ordre croissant\n");
@@ -17,7 +18,9 @@ void showMenu(struct PoulDonnees listePouls[], int *tailleTab)
 	printf("Tapez 4 pour afficher la moyenne de pouls dans une plage de temps donnee\n");
 	printf("Tapez 5 pour afficher le nombre de lignes de donnees actuellement en memoire\n");
 	printf("Tapez 6 pour rechercher et afficher les maximum et minimum de pouls : \n");
-	printf("Tapez 7 pour quitter\n");
+	printf("Tapez un autre chiffre pour quitter\n");
+
+	//récupération du choix des utilisateurs
 	scanf("%d", &choix);
 	switch (choix)
 	{
@@ -58,10 +61,8 @@ void showMenu(struct PoulDonnees listePouls[], int *tailleTab)
 	case 6:
 		showMaxAndMin(listePouls, tailleTab);
 		break;
-	case 7:
-		printf("Au revoir\n");
-		break;
 	default:
+		printf("Au revoir\n");
 		break;
 	}
 }

@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <Windows.h>
-#include"action.h"
+#include "action.h"
 
+//Fonction qui affiche le menu et qui gère l'appel des fonctions
 void showMenu(struct PoulDonnees listePoul[], int *tailleTab);

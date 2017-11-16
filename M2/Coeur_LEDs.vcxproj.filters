@@ -15,18 +15,24 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Module_cardio_conversion_fixe.ino" />
+    <None Include="Coeur_LEDs.ino" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="__vm\.Module_cardio_conversion_fixe.vsarduino.h">
+    <ClInclude Include="__vm\.Coeur_LEDs.vsarduino.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="cardio.h">
+    <ClInclude Include="param.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="coeur.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="__vm\.M2.vsarduino.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="cardio.cpp">
+    <ClCompile Include="coeur.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

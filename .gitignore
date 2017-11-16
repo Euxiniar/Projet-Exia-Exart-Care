@@ -1,25 +1,14 @@
 ﻿################################################################################
-# Ce fichier .gitignore a été automatiquement créé par Microsoft(R) Visual Studio.
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/Module_cardio_conversion_fixe/Debug/*
-/Module_cardio_conversion_fixe/Debug
-/Module_cardio_conversion_fixe/__vm
-/Tous les programs/.vs/*
-/Generation param.h/.vs/Generation param.h/v15
-/Generation param.h/Debug
-/Generation param.h/Generation param.h/Debug
-/module Tri Recherche en C (V. Tableau)/Debug
-/module Tri Recherche en C (V. Tableau)/x64/Debug
-/Programme Arduino Led/Coeur_LEDs/Debug
-/Programme Arduino Led/Coeur_LEDs/__vm
-/Tous les programs/Debug
-/Tous les programs/x64/Debug
-/Tri et Recherche programme C/.vs/Tri et Recherche programme C/v15
-/Tri et Recherche programme C/Debug
-/Tri et Recherche programme C/Tri et Recherche programme C/Debug/Tri et R.929B8C92.tlog
-/Tri et Recherche programme C/Tri et Recherche programme C/Debug
-/Tri et Recherche programme C/Tri et Recherche programme C/x64/Debug
-/Tri et Recherche programme C/x64/Debug
-/Generation param.h/Generation param.h/x64/Debug/Generati.B03F404F.tlog
-/Generation param.h/Generation param.h/x64/Debug
+/.vs/*
+/Debug
+/M1/Debug
+/M1/__vm
+/M2/Debug
+/M2/__vm
+/M2 Generation param.h/Debug
+/M4/Debug
+/M4/x64/Debug
+/M4 not finished/Debug
