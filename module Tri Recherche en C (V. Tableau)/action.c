@@ -187,11 +187,6 @@ void getMoyennePoulsSelonTemps(struct PoulDonnees listePouls[], int * tailleTab,
 	*poulMoyen = (double)sum / (double)tailleBuf;
 }
 
-//struct PoulDonnees searchValue(struct PoulDonnees listePouls[], int * tailleTab, int value, int poulOuTemps)
-//{
-//	return listePouls[0];
-//}
-
 void showMaxAndMin(struct PoulDonnees listePouls[], int * tailleTab)
 {
 	

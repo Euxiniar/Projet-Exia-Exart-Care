@@ -25,5 +25,4 @@ void copyTabPoulDonnees(struct PoulDonnees listePoulsToCopy[], int *tailleTab, s
 void clearTabPoulDonnees(struct PoulDonnees listePouls[]);
 void recherchePoulsSelonTemps(struct PoulDonnees listePouls[], int *tailleTab, int temps);
 void getMoyennePoulsSelonTemps(struct PoulDonnees listePouls[], int *tailleTab, int tempsMin, int tempsMax, double *poulMoyen);
-//struct PoulDonnees searchValue(struct PoulDonnees listePouls[], int *tailleTab, int value, int poulOuTemps);
 void showMaxAndMin(struct PoulDonnees listePouls[], int *tailleTab);
