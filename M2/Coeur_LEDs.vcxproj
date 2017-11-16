@@ -84,7 +84,6 @@
   <ItemGroup>
     <ClInclude Include="coeur.h" />
     <ClInclude Include="param.h" />
-    <ClInclude Include="__vm\.Coeur_LEDs.vsarduino.h" />
     <ClInclude Include="__vm\.M2.vsarduino.h" />
   </ItemGroup>
   <ItemGroup>

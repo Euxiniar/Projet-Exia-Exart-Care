@@ -1,11 +1,16 @@
-﻿#include "cardio.h"
+﻿/*
+Name:		Coeur_LEDs.ino
+Created:	14/11/2017
+Author:	Anatole
+*/
+
+#include "cardio.h"
 
 
 // the setup function runs once when you press reset or power the board
 void setup() {
 	Serial.begin(9600);
 	pinMode(A0, INPUT);
-
 }
 
 // the loop function runs over and over again until power down or reset

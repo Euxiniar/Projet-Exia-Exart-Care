@@ -1,3 +1,9 @@
+/*
+Name:		Coeur_LEDs.ino
+Created:	14/11/2017
+Author:	Charles
+*/
+
 #include "menu.h"
 
 void showMenu(int *modeAffichage, int *nbLedsAllumees, int *ledAllumee)

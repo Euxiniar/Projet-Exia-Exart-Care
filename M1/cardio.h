@@ -1,3 +1,9 @@
+/*
+Name:		Coeur_LEDs.ino
+Created:	14/11/2017
+Author:	Anatole
+*/
+
 #pragma once
 //Permet l'envoi de données au port série de l'arduino, qui serons ensuite lues dans le module processing
 //tempsPrecedent : il s'agit du temps d'enregistrement de la valeur précédente

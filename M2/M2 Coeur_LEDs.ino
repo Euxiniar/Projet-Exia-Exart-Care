@@ -1,6 +1,6 @@
 /*
  Name:		Coeur_LEDs.ino
- Created:	14/11/2017 15:49:16
+ Created:	14/11/2017
  Author:	Maxime
 */
 
@@ -29,19 +29,5 @@ void loop()
 	case 2: LEDX(ledAllumee, tab); break;
 	case 3: chenille(nbLedsAllumees , tab); break;
 	default: break;
-	}/*
-	int x = 3;
-	for (int i = 0; i < x; i++)
-	{
-	digitalWrite(tab[i], HIGH);
-	digitalWrite(tab[i + 10 - x], LOW);
-	delay(500);
 	}
-
-	for (int i = x; i < 10; i++)
-	{
-		digitalWrite(tab[i - x], LOW);
-		digitalWrite(tab[i], HIGH);
-		delay(500);
-	}*/
 }
