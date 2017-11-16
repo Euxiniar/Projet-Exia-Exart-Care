@@ -1,5 +1,5 @@
 /*
-Name:		Coeur_LEDs.ino
+Name:		coeur.h
 Created:	14/11/2017
 Author:	Maxime
 */

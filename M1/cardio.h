@@ -1,5 +1,5 @@
 /*
-Name:		Coeur_LEDs.ino
+Name:		cardio.h
 Created:	14/11/2017
 Author:	Anatole
 */

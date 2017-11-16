@@ -1,5 +1,5 @@
 /*
- Name:		Coeur_LEDs.ino
+ Name:		M2 Coeur_LEDs.ino
  Created:	14/11/2017
  Author:	Maxime
 */
