@@ -23,6 +23,7 @@
     <ProjectGuid>{B03F404F-F6E3-4E64-ACE8-15E3DB8F670D}</ProjectGuid>
     <RootNamespace>Generationparamh</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <ProjectName>M2 Generation param.h</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

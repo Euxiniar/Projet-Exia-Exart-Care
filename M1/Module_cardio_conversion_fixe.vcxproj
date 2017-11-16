@@ -14,7 +14,7 @@
     <ProjectGuid>{4707AFF6-0DA9-4293-AA4B-507110950DE1}</ProjectGuid>
     <RootNamespace>
     </RootNamespace>
-    <ProjectName>Module_cardio_conversion_fixe</ProjectName>
+    <ProjectName>M1 Module_cardio_conversion_fixe</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -75,7 +75,7 @@
     <ProjectCapability Include="VisualMicro" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Module_cardio_conversion_fixe.ino">
+    <None Include="M1 Module_cardio_conversion_fixe.ino">
       <FileType>CppCode</FileType>
     </None>
   </ItemGroup>

@@ -13,7 +13,7 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{C5F80730-F44F-4478-BDAE-6634EFC2CA88}</ProjectGuid>
     <RootNamespace>Coeur_LEDs</RootNamespace>
-    <ProjectName>Coeur_LEDs</ProjectName>
+    <ProjectName>M2 Coeur_LEDs</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -77,7 +77,7 @@
     <DebuggerFlavor>VisualMicroDebugger</DebuggerFlavor>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="Coeur_LEDs.ino">
+    <None Include="M2 Coeur_LEDs.ino">
       <FileType>CppCode</FileType>
     </None>
   </ItemGroup>
