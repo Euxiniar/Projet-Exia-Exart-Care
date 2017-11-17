@@ -13,5 +13,5 @@ Author:	Thomas
 #include <Windows.h>
 #include "action.h"
 
-//Fonction qui affiche le menu et qui gère l'appel des fonctions
+// Fonction affichant le menu et gerant les appels des fonctions
 void showMenu(struct PoulDonnees listePoul[], int *tailleTab);

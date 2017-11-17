@@ -12,7 +12,7 @@ void lireFichier(struct PoulDonnees listePouls[])
 	int poul, temps;
 	char tab[TAILLETAB];
 
-	//ouverture du fichier
+	// Ouverture du fichier
 	f = fopen("./Battements.csv", "r");
 
 	if (!f)
@@ -22,15 +22,15 @@ void lireFichier(struct PoulDonnees listePouls[])
 		exit(1);
 	}
 
-	//tant qu'on est pas arrivé au bout du fichier, on lit ligne par ligne
+	// Lecture ligne par ligne tant que on est pas a la fin du fichier
 	while (fgets(tab, TAILLETAB, f) != NULL)
 	{
 		static int i = 0;
 
-		//on stock le poul et le temps dans des variables tampons
+		// Stockage du poul dans des variables tampons
 		sscanf(tab, "%d ;%d", &poul, &temps);
 
-		//puis on le stock dans le tableau de strucutures
+		// Puis stockage dans le tableau de structure
 		if (tab[0] != '\n')
 		{
 			listePouls[i].poul = poul;
@@ -44,7 +44,7 @@ void lireFichier(struct PoulDonnees listePouls[])
 int getTailleListePouls(struct PoulDonnees listePouls[])
 {
 	int i = 0;
-	//tant que les valeurs de la structure select du pouls ne sont pas négatives, c'est que la structure est pleine
+	// Tant que les valeurs de la structure select du pouls ne sont pas negatives, c'est que la structure est pleine
 	while (listePouls[i].poul >= 0)
 	{
 		i++;
@@ -118,7 +118,7 @@ void triDecroissant(struct PoulDonnees listePouls[], int *tailleTab, int poulOuT
 				{
 					if (listePouls[i - 1].poul < listePouls[i].poul)
 					{
-						//on inverse l'élément select avec l'élément précédent
+						// Inversement de l'element avec le precedent
 						triABulle(listePouls, &permute, i);
 					}
 				}
@@ -126,7 +126,7 @@ void triDecroissant(struct PoulDonnees listePouls[], int *tailleTab, int poulOuT
 				{
 					if (listePouls[i - 1].temps < listePouls[i].temps)
 					{
-						//on inverse l'élément select avec l'élément précédent
+						// Inversement de l'element avec le precedent
 						triABulle(listePouls, &permute, i);
 					}
 				}
@@ -142,11 +142,11 @@ void triDecroissant(struct PoulDonnees listePouls[], int *tailleTab, int poulOuT
 
 void copyTabPoulDonnees(struct PoulDonnees listePoulsToCopy[], int *tailleTab, struct PoulDonnees tabQuiALaCopie[])
 {
-	//on s'assure que le tableau de copie est vide
+	// Permet de vider le tableau et lui redonner la bonne taille
 	clearTabPoulDonnees(tabQuiALaCopie);
 	*tailleTab = getTailleListePouls(listePoulsToCopy);
 
-	//on copie chaque élément dans le nouveau tableau
+	// Copie de chaque element dans le nouveau tableau
 	for (int i = 0; i < *tailleTab; i++)
 	{
 		tabQuiALaCopie[i] = listePoulsToCopy[i];
@@ -156,7 +156,7 @@ void copyTabPoulDonnees(struct PoulDonnees listePoulsToCopy[], int *tailleTab, s
 void clearTabPoulDonnees(struct PoulDonnees listePouls[])
 {
 	int i = 0;
-	//on met tous les éléments à -1
+	// Definition de tous les elemnts a -1
 	while (listePouls[i].poul >= 0)
 	{
 		listePouls[i].poul = -1;
@@ -178,12 +178,12 @@ void recherchePoulsSelonTemps(struct PoulDonnees listePouls[], int *tailleTab, i
 			y++;
 		}
 	}
-	//le tableau passé en paramètre ne va plus contenir que les éléments du buf
-	//on efface donc le tableau
+	// Le tableau passe en parametre ne contient plus que les elements du buffer
+	// Suppression des valeurs du tableau
 	clearTabPoulDonnees(listePouls);
-	//puis on le remplit à nouveau
+	// Nouveau remplissage du tableau
 	copyTabPoulDonnees(buf, tailleTab, listePouls);
-	//on update la taille du tableau
+	// Mise a jour de la taille du tableau
 	*tailleTab = getTailleListePouls(listePouls);
 }
 
@@ -196,7 +196,7 @@ void getMoyennePoulsSelonTemps(struct PoulDonnees listePouls[], int * tailleTab,
 	int y = 0;
 	for (int i = 0; i < *tailleTab; i++)
 	{
-		//on remplit  le buffer des données comrpises entre le temps min et le temps max
+		// Remplissage du buffer par les donnees comprises entre le temps minimum et le temps maximum
 		if (listePouls[i].temps >= tempsMin && listePouls[i].temps <= tempsMax)
 		{
 			buf[y] = listePouls[i];
@@ -205,12 +205,12 @@ void getMoyennePoulsSelonTemps(struct PoulDonnees listePouls[], int * tailleTab,
 	}
 	tailleBuf = getTailleListePouls(buf);
 
-	//la somme correspond à la somme des pouls tous les éléments du buffer
+	// Calcul de la somme des pouls dans le buffer
 	for (int i = 0; i < tailleBuf; i++)
 	{
 		sum += buf[i].poul;
 	}
-	//la moyenne des pouls correspond à la somme des pouls divisée par le nombre d'éléments.
+	// Calcul de la somme des pouls divisee par le nombre d'elements
 	*poulMoyen = (double)sum / (double)tailleBuf;
 }
 
@@ -224,9 +224,9 @@ void showMaxAndMin(struct PoulDonnees listePouls[], int * tailleTab)
 	}
 	for (int i = 0; i < *tailleTab; i++)
 	{
-		//si le poul max est inférieur au poul sélectionné, on le modifie
+		// Modification du poul si le poul max est inferieur au poul selectionne
 		max = (max < listePouls[i].poul ? listePouls[i].poul : max);
-		//si le poul min est supérieur au poul sélectionné, on le modifie
+		// Modification du poul si le poul min est superieur au poul selectionne
 		min = (min > listePouls[i].poul ? listePouls[i].poul : min);
 	}
 	printf("Le poul maximum est : %d, le poul minimum est : %d", min, max);
