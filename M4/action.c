@@ -78,7 +78,7 @@ void affichage_date()
 	// Lecture de la premiere ligne du fichier
 	fgets(tab, TAILLETAB, f);
 	fclose(f);
-	printf("La date de esure a ete enregistree le %s", tab);
+	printf("La date de mesure a ete enregistree le %s", tab);
 }
 
 void triABulles(struct PoulDonnees listePouls[], int *permute, int caseSelect)

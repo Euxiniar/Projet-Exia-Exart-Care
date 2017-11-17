@@ -24,9 +24,9 @@ void showMenu(struct PoulDonnees listePouls[], int *tailleTab)
 	printf("Tapez 3 pour afficher les donnees pour un temps particulier\n");
 	printf("Tapez 4 pour afficher la moyenne de pouls dans une plage de temps donnee\n");
 	printf("Tapez 5 pour afficher le nombre de lignes de donnees actuellement en memoire\n");
-	printf("Tapez 6 pour rechercher et afficher les maximum et minimum de pouls : \n");
-	printf("Tapez 7 pour afficher la date et l'heure de creation du fichier : \n");
-	printf("Tapez un autre chiffre pour quitter\n");
+	printf("Tapez 6 pour rechercher et afficher les maximum et minimum de pouls\n");
+	printf("Tapez 7 pour afficher la date et l'heure de creation du fichier\n");
+	printf("Tapez un autre chiffre pour quitter : \n");
 
 	// Recuperation du choix de l'utilisateur
 	scanf("%d", &choix);
