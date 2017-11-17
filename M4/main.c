@@ -7,6 +7,7 @@ Author:	Charles et Thomas
 #include "menu.h"
 #include "action.h"
 
+// Definiton des tableaux de structures et acquisition de leur taille
 int main()
 {
 	struct PoulDonnees listePouls[TAILLETAB];

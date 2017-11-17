@@ -8,6 +8,7 @@ Author:	Thomas
 
 void showMenu(struct PoulDonnees listePouls[], int *tailleTab)
 {
+	// Creation des variables locales
 	int choix;
 	int poulOuTemps;
 	int temps;
@@ -15,7 +16,7 @@ void showMenu(struct PoulDonnees listePouls[], int *tailleTab)
 	int tempsMax;
 	double poulMoyen;
 
-	//Affichage du menu à l'utilisateur
+	// Affichage du menu a l'utilisateur
 	printf("Bienvenue\n");
 	printf("Tapez 0 pour afficher les donnees dans l'ordre du fichier .csv\n");
 	printf("Tapez 1 pour afficher les donnees dans l'ordre croissant\n");
@@ -26,8 +27,10 @@ void showMenu(struct PoulDonnees listePouls[], int *tailleTab)
 	printf("Tapez 6 pour rechercher et afficher les maximum et minimum de pouls : \n");
 	printf("Tapez un autre chiffre pour quitter\n");
 
-	//récupération du choix des utilisateurs
+	// Recuperation du choix de l'utilisateur
 	scanf("%d", &choix);
+
+	// Traitement du choix de l'utilisateur
 	switch (choix)
 	{
 	case 0: 
