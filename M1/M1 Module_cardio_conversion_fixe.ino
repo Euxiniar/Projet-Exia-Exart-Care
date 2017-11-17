@@ -18,8 +18,8 @@ void loop() {
 	int time;
 	time = millis();
 
-	// Correspond � un petit "r�chauffement" du convertisseur
-	// analogique-num�rique, cela semble am�liorer les r�sultats
+	// Correspond a un petit "rechauffement" du convertisseur
+	// analogique-numerique, cela semble ameliorer les resultats
 	while ((millis() - time)<1000) {
 		analogRead(0);
 	}

@@ -6,8 +6,9 @@ Author:	Maxime
 
 #pragma once
 #include "param.h"
+#include <Arduino.h>
 
-void allLEDs(int *tab);
-void uneLEDsurX(int x, int *tab);
-void LEDX(int x, int *tab);
-void chenille(int x, int *tab);
+ void allLEDs(int *tab);
+ void uneLEDsurX(int *tab);
+ void LEDX(int *tab);
+ void chenille(int *tab);

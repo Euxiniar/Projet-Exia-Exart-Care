@@ -229,6 +229,6 @@ void showMaxAndMin(struct PoulDonnees listePouls[], int * tailleTab)
 		// Modification du poul si le poul min est superieur au poul selectionne
 		min = (min > listePouls[i].poul ? listePouls[i].poul : min);
 	}
-	printf("Le poul maximum est : %d, le poul minimum est : %d", min, max);
+	printf("Le poul minimum est : %d, le poul maximum est : %d", min, max);
 }
 

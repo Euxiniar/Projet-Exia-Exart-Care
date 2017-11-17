@@ -13,8 +13,7 @@ void envoidonnees(int tempsPrecedent, int tempsDetection)
 {
 	Serial.print((1000.0 * 60.0) / (tempsDetection - tempsPrecedent), 0); // conversion des donnees du capteur en frequence cardiaque
 	Serial.print(";");
-	Serial.print(tempsDetection); // affichage du temps écoulé
-	Serial.print("\n");
+	Serial.print(tempsDetection - tempsPrecedent); // affichage du temps écoulé
 }
 
 /*--------------------------------------------------------------------------------------*/
@@ -46,7 +45,7 @@ void recupDonnees()
 
 	while ((millis() - time)< calcultime)  // la durée de mesure est de X secondes
 	{
-		int valeurActuelle = analogRead(0); //on lit la valeur
+		int valeurActuelle = analogRead(A0); //on lit la valeur
 		calculPouls(valeurActuelle, &valeurPrecedente, &tempsPrecedent); // calcul du pouls à partir de la valeur
 	}
 }

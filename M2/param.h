@@ -1,5 +1,5 @@
 #pragma once
 
-int modeAffichage = 3;
-int nbLedsAllumees = 5;
-int ledAllumee = -1;
+#define modeAffichage 2
+#define nbLedsAllumees -1
+#define ledAllumee 6

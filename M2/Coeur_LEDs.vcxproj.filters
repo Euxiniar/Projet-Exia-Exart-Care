@@ -29,7 +29,7 @@
     <None Include="M2 Coeur_LEDs.ino" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="coeur.c">
+    <ClCompile Include="coeur.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
