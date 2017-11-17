@@ -1,2 +1,2 @@
 # Projet-Exia-Hexart-Care
-Coucou Exia ! Hésitez pas à vous inspirer, mais évitez le copyright SVP :)
+Coucou Exia ! Ce projet est soumis à une license MIT, évitez donc le copyright, ou mentionnez ce projet dans vos sources, si vous copiez le code :) Merci, et bonne chance :D
