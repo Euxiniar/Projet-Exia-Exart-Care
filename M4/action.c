@@ -52,7 +52,7 @@ int getTailleListePouls(struct PoulDonnees listePouls[])
 	return i;
 }
 
-void affichage_listePoul(struct PoulDonnees listePouls[], int *tailleTab)
+void affichage_listePouls(struct PoulDonnees listePouls[], int *tailleTab)
 {
 	for (int i = 0; i < *tailleTab; i++)
 	{
@@ -60,7 +60,7 @@ void affichage_listePoul(struct PoulDonnees listePouls[], int *tailleTab)
 	}
 }
 
-void triABulle(struct PoulDonnees listePouls[], int *permute, int caseSelect)
+void triABulles(struct PoulDonnees listePouls[], int *permute, int caseSelect)
 {
 	struct PoulDonnees temp;
 	temp = listePouls[caseSelect - 1];
@@ -84,14 +84,14 @@ void triCroissant(struct PoulDonnees listePouls[], int *tailleTab, int poulOuTem
 				{
 					if (listePouls[i - 1].poul > listePouls[i].poul)
 					{
-						triABulle(listePouls, &permute, i);
+						triABulles(listePouls, &permute, i);
 					}
 				}
 				else if (poulOuTemps == 1)
 				{
 					if (listePouls[i - 1].temps > listePouls[i].temps)
 					{
-						triABulle(listePouls, &permute, i);
+						triABulles(listePouls, &permute, i);
 					}
 				}
 			}
@@ -119,7 +119,7 @@ void triDecroissant(struct PoulDonnees listePouls[], int *tailleTab, int poulOuT
 					if (listePouls[i - 1].poul < listePouls[i].poul)
 					{
 						// Inversement de l'element avec le precedent
-						triABulle(listePouls, &permute, i);
+						triABulles(listePouls, &permute, i);
 					}
 				}
 				else if (poulOuTemps == 1)
@@ -127,7 +127,7 @@ void triDecroissant(struct PoulDonnees listePouls[], int *tailleTab, int poulOuT
 					if (listePouls[i - 1].temps < listePouls[i].temps)
 					{
 						// Inversement de l'element avec le precedent
-						triABulle(listePouls, &permute, i);
+						triABulles(listePouls, &permute, i);
 					}
 				}
 			}
