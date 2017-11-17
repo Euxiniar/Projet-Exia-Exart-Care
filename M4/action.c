@@ -52,7 +52,7 @@ int getTailleListePouls(struct PoulDonnees listePouls[])
 	return i;
 }
 
-void affichage_listePoul(struct PoulDonnees listePouls[], int *tailleTab)
+void affichage_listePouls(struct PoulDonnees listePouls[], int *tailleTab)
 {
 	for (int i = 0; i < *tailleTab; i++)
 	{

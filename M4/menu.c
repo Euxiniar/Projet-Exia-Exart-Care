@@ -34,27 +34,27 @@ void showMenu(struct PoulDonnees listePouls[], int *tailleTab)
 	switch (choix)
 	{
 	case 0: 
-		affichage_listePoul(listePouls, tailleTab);
+		affichage_listePouls(listePouls, tailleTab);
 		break;
 	case 1:
 		printf("Tapez 0 pour classer les pouls en ordre croissant\n");
 		printf("Tapez 1 pour classer les temps en ordre croissant\n");
 		scanf("%d", &poulOuTemps);
 		(poulOuTemps == 0 || poulOuTemps == 1 ? triCroissant(listePouls, tailleTab, poulOuTemps) : (*tailleTab = -1));
-		affichage_listePoul(listePouls, tailleTab);
+		affichage_listePouls(listePouls, tailleTab);
 		break;
 	case 2:
 		printf("Tapez 0 pour classer les pouls en ordre decroissant\n");
 		printf("Tapez 1 pour classer les temps en ordre decroissant\n");
 		scanf("%d", &poulOuTemps);
 		(poulOuTemps == 0 || poulOuTemps == 1 ? triDecroissant(listePouls, tailleTab, poulOuTemps) : (*tailleTab = -1));
-		affichage_listePoul(listePouls, tailleTab);
+		affichage_listePouls(listePouls, tailleTab);
 		break;
 	case 3:
 		printf("Tapez le temps pour lequel vous voulez les donnees\n");
 		scanf("%d", &temps);
 		recherchePoulsSelonTemps(listePouls, tailleTab, temps);
-		affichage_listePoul(listePouls, tailleTab);
+		affichage_listePouls(listePouls, tailleTab);
 		break;
 	case 4:
 		printf("Tapez le temps minimum\n");
