@@ -56,8 +56,29 @@ void affichage_listePouls(struct PoulDonnees listePouls[], int *tailleTab)
 {
 	for (int i = 0; i < *tailleTab; i++)
 	{
-		printf("%d;%d\n", listePouls[i].poul, listePouls[i].temps);
+		printf("Poul : %d, Temps : %d\n", listePouls[i].poul, listePouls[i].temps);
 	}
+}
+
+void affichage_date()
+{
+	FILE *f = NULL;
+	char tab[TAILLETAB];
+
+	// Ouverture du fichier
+	f = fopen("./Date.csv", "r");
+
+	if (!f)
+	{
+		printf("Le fichier dataPouls.csv n'a pas pu etre lu !");
+		fclose(f);
+		exit(1);
+	}
+
+	// Lecture de la premiere ligne du fichier
+	fgets(tab, TAILLETAB, f);
+	fclose(f);
+	printf("La date de esure a ete enregistree le %s", tab);
 }
 
 void triABulles(struct PoulDonnees listePouls[], int *permute, int caseSelect)
