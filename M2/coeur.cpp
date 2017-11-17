@@ -9,42 +9,51 @@ Author:    Maxime
 
 void allLEDs(int *tab)
 {
-	while (Serial.read() != NULL)            //tant que le battement est lu
-	{
-		for (int i = 0; i < 10; i++)    //allume toutes les LEDs
-		{
-			digitalWrite(tab[i], HIGH);
-		}
-	}
-	while (Serial.read() == NULL)
+	
+	while (analogRead(0) <= CALIBRATION);
 	{
 		for (int i = 0; i < 10; i++)
 		{
 			digitalWrite(tab[i], LOW);
 		}
 	}
+	while (analogRead(0) > CALIBRATION)           //tant que le battement est lu
+	{
+		for (int i = 0; i <10 ; i++)    //allume toutes les LEDs
+		{
+			digitalWrite(tab[i], HIGH);
+		}
+	}
+
 }
 
 void uneLEDsurX(int *tab)
 {
 
-	for (int i = 0; Serial.read() != NULL && i < 10; i += nbLedsAllumees)
+	while (analogRead(0) <= CALIBRATION)           //tant que le battement est lu
 	{
-		digitalWrite(tab[i], HIGH);
+		for (int i = 0; i < 10; i += nbLedsAllumees)
+		{
+			digitalWrite(tab[i], LOW);
+		}
 	}
-	for (int i = 0; Serial.read() == NULL && i < 10; i += nbLedsAllumees)
+	while (analogRead(0) > CALIBRATION)           //tant que le battement est lu
 	{
-		digitalWrite(tab[i], LOW);
+		for (int i = 0; i < 10; i += nbLedsAllumees)
+		{
+			digitalWrite(tab[i], HIGH);
+		}
 	}
+	
 }
 
 void LEDX(int *tab)
 {
-	while (Serial.read() != NULL)
+	while (analogRead(0) > CALIBRATION)
 	{
 		digitalWrite(tab[ledAllumee], HIGH);
 	}
-	while (Serial.read() == NULL)
+	while (analogRead(0) < CALIBRATION)
 	{
 		digitalWrite(tab[ledAllumee], LOW);
 	}
@@ -52,23 +61,27 @@ void LEDX(int *tab)
 
 void chenille(int *tab)
 {
-	for (int i = 0; i < nbLedsAllumees; i++)
+	int i = 0;
+	while (modeAffichage == 3)
 	{
-		while (Serial.read() == NULL);
-		while (Serial.read() != NULL)
+		while (analogRead(0) < CALIBRATION);
+		if (analogRead(0) > CALIBRATION)
 		{
-			digitalWrite(tab[i], HIGH);
-			digitalWrite(tab[i + 10 - nbLedsAllumees], LOW);
+			if (i < nbLedsAllumees)
+			{
+				digitalWrite(tab[i], HIGH);
+				digitalWrite(tab[i + 10 - nbLedsAllumees], LOW);
+			}
+			else if (i <= 10)
+			{
+				digitalWrite(tab[i - nbLedsAllumees], LOW);
+				digitalWrite(tab[i], HIGH);
+			}
+			else if (i > 10)
+				i -= 10;
 		}
+		
+		i++;
 	}
-
-	for (int i = nbLedsAllumees; i < 10; i++)
-	{
-		while (A0 != 1);
-		while (A0 == 1)
-		{
-			digitalWrite(tab[i - nbLedsAllumees], LOW);
-			digitalWrite(tab[i], HIGH);
-		}
-	}
+	
 }
