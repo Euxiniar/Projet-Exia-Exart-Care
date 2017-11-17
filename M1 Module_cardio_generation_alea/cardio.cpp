@@ -14,9 +14,9 @@ int alternance = 0;
 
 void envoidonnees(int tempsDetection)
 {
-	Serial.print((1000.0 * 60.0) / (tempsDetection - tempsPrecedent), 0);
-	Serial.print(";");
-	Serial.print(tempsDetection - tempsPrecedent);
+	Serial.print((1000.0 * 60.0) / (tempsDetection - tempsPrecedent), 0); // 1 pulsation en (tempsDetection - tempsPrecedent) milli-secondes 
+	Serial.print(";");													  // --> [1 * 1000 (en secondes) * 60 (en minutes)] / [temps 1 pulsation]
+	Serial.print(tempsDetection - tempsPrecedent);						  // --> nombre de pulsations en une minute
 }
 
 /*--------------------------------------------------------------------------------------*/
