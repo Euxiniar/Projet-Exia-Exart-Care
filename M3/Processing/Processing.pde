@@ -7,7 +7,7 @@ Serial udSerial; // Définition du nom port série qu'on utilise
 
 void setup() {
   udSerial = new Serial(this, Serial.list()[0], 115200); // Définition des paramètres du port série et d'une vitesse de données
-  output = createWriter ("Battements.csv"); // Créer un fichier "Battements.csv" dans lequel sera marqué les résultats
+  output = createWriter ("../../M4/Battements.csv"); // Créer un fichier "Battements.csv" dans lequel sera marqué les résultats
 }
 
   void draw() {

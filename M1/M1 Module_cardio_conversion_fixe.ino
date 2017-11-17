@@ -9,7 +9,7 @@ Author:	Anatole
 
 // the setup function runs once when you press reset or power the board
 void setup() {
-	Serial.begin(9600);
+	Serial.begin(115200);
 	pinMode(A0, INPUT);
 }
 
