@@ -8,8 +8,8 @@ Serial udSerial; // Définition du nom port série qu'on utilise
 
 void setup() {
   udSerial = new Serial(this, Serial.list()[0], 115200); // Définition des paramètres du port série et d'une vitesse de données
-  outputPoulsTemps = createWriter ("../../M4/Battements.csv"); // Créer un fichier "Battements.csv" dans lequel sera marqué les résultats
-  outputDate = createWriter ("../../M4/Date.csv"); // Créer un fichier "Date.csv" dans lequel sera marqué la date
+  outputPoulsTemps = createWriter ("../../M4/Battements.csv"); // Créer un fichier "Battements.csv" dans le reperetoire M4 dans lequel sera marqué les résultats
+  outputDate = createWriter ("../../M4/Date.csv"); // Créer un fichier "Date.csv" dans le reperetoire M4 dans lequel sera marqué la date
 }
 
   void draw() {
@@ -29,7 +29,7 @@ void setup() {
     int d = day();
     int mo = month();
     int y = year();
-    String heure = d + "/" + mo + "/" + y +" à " + h + ":" + m + ":" + s;
+    String heure = d + "/" + mo + "/" + y +" a " + h + ":" + m + ":" + s;
     outputDate.print(heure);
     outputDate.flush(); // Ouverture du fichier permettant l'écriture de la date 
     outputDate.close(); // Fermeture du fichier outputDate
