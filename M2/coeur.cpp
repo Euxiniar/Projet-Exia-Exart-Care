@@ -10,34 +10,33 @@ Author:    Maxime
 void allLEDs(int *tab)
 {
 	
-	while (analogRead(0) <= CALIBRATION);
+	while (analogRead(0) <= SEUIL);
 	{
 		for (int i = 0; i < 10; i++)
+		{
+			digitalWrite(tab[i],HIGH);
+		}
+	}
+	if (analogRead(0) > SEUIL)           //tant que le battement est lu
+	{
+		for (int i = 0; i <10 ; i++)    //allume toutes les LEDs
 		{
 			digitalWrite(tab[i], LOW);
 		}
 	}
-	while (analogRead(0) > CALIBRATION)           //tant que le battement est lu
-	{
-		for (int i = 0; i <10 ; i++)    //allume toutes les LEDs
-		{
-			digitalWrite(tab[i], HIGH);
-		}
-	}
-
 }
 
 void uneLEDsurX(int *tab)
 {
 
-	while (analogRead(0) <= CALIBRATION)           //tant que le battement est lu
+	while (analogRead(0) <= SEUIL)           //tant que le battement est lu
 	{
 		for (int i = 0; i < 10; i += nbLedsAllumees)
 		{
 			digitalWrite(tab[i], LOW);
 		}
 	}
-	while (analogRead(0) > CALIBRATION)           //tant que le battement est lu
+	while (analogRead(0) > SEUIL)           //tant que le battement est lu
 	{
 		for (int i = 0; i < 10; i += nbLedsAllumees)
 		{
@@ -49,14 +48,15 @@ void uneLEDsurX(int *tab)
 
 void LEDX(int *tab)
 {
-	while (analogRead(0) > CALIBRATION)
-	{
-		digitalWrite(tab[ledAllumee], HIGH);
-	}
-	while (analogRead(0) < CALIBRATION)
+	while (analogRead(0) < SEUIL)
 	{
 		digitalWrite(tab[ledAllumee], LOW);
 	}
+	while (analogRead(0) > SEUIL)
+	{
+		digitalWrite(tab[ledAllumee], HIGH);
+	}
+
 }
 
 void chenille(int *tab)
@@ -64,23 +64,25 @@ void chenille(int *tab)
 	int i = 0;
 	while (modeAffichage == 3)
 	{
-		while (analogRead(0) < CALIBRATION);
-		if (analogRead(0) > CALIBRATION)
+		while (analogRead(0) < SEUIL) { }
+
+		if (i >= 10)
 		{
-			if (i < nbLedsAllumees)
-			{
-				digitalWrite(tab[i], HIGH);
-				digitalWrite(tab[i + 10 - nbLedsAllumees], LOW);
-			}
-			else if (i <= 10)
-			{
-				digitalWrite(tab[i - nbLedsAllumees], LOW);
-				digitalWrite(tab[i], HIGH);
-			}
-			else if (i > 10)
-				i -= 10;
+			i -= 10;
 		}
-		
+		if (i < nbLedsAllumees)
+		{
+			digitalWrite(tab[i], HIGH);
+			digitalWrite(tab[i + 10 - nbLedsAllumees], LOW);
+			
+		}
+		else if (i < 10)
+		{
+			digitalWrite(tab[i], HIGH);
+			digitalWrite(tab[i - nbLedsAllumees], LOW);
+		}
+
+		while (analogRead(0) > SEUIL) {}
 		i++;
 	}
 	
