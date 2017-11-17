@@ -42,3 +42,5 @@ void recherchePoulsSelonTemps(struct PoulDonnees listePouls[], int *tailleTab, i
 void getMoyennePoulsSelonTemps(struct PoulDonnees listePouls[], int *tailleTab, int tempsMin, int tempsMax, double *poulMoyen);
 // Fonction qui permet de voir le poul minimum et maximum d'un tableau de pouls
 void showMaxAndMin(struct PoulDonnees listePouls[], int *tailleTab);
+//Fonction qui affiche la date de cration du fichier
+void affichage_date();
