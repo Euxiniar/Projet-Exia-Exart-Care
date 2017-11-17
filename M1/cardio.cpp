@@ -46,7 +46,7 @@ void recupDonnees()
 
 	while ((millis() - time)< calcultime)  // la durée de mesure est de X secondes
 	{
-		int valeurActuelle = analogRead(0); //on lit la valeur
+		int valeurActuelle = analogRead(A0); //on lit la valeur
 		calculPouls(valeurActuelle, &valeurPrecedente, &tempsPrecedent); // calcul du pouls à partir de la valeur
 	}
 }
