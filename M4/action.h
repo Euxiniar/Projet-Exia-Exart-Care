@@ -27,7 +27,7 @@ int getTailleListePouls(struct PoulDonnees listePouls[]);
 // Affiche les donnees d'un tableau de poul
 void affichage_listePouls(struct PoulDonnees listePouls[], int *tailleTab);
 // Fonction qui inverse deux elements dans un tableau de pouls
-void triABulle(struct PoulDonnees listePouls[], int *permute, int caseSelect);
+void triABulles(struct PoulDonnees listePouls[], int *permute, int caseSelect);
 // Fonction qui effectue un tri croissant selon le poul et selon le temps
 void triCroissant(struct PoulDonnees listePouls[], int *tailleTab, int poulOuTemps);
 // Fonction qui effectue un tri decroissant selon le poul et selon le temps
