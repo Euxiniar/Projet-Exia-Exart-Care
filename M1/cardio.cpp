@@ -13,8 +13,7 @@ void envoidonnees(int tempsPrecedent, int tempsDetection)
 {
 	Serial.print((1000.0 * 60.0) / (tempsDetection - tempsPrecedent), 0); // conversion des donnees du capteur en frequence cardiaque
 	Serial.print(";");
-	Serial.print(tempsDetection); // affichage du temps écoulé
-	Serial.print("\n");
+	Serial.print(tempsDetection - tempsPrecedent); // affichage du temps écoulé
 }
 
 /*--------------------------------------------------------------------------------------*/
