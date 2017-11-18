@@ -20,3 +20,5 @@ Si la compilation ne fonctionne pas, il faudra cliquer droit sur le projet selec
 Pour accéder aux ressources, ouvrez le dossier montages
 
 Pour accéder aux fichiers .exe, ouvrez le dossier bin. L'éxécutable du tri est dsponible à l'emplacement **Trie et recherche** et l'éxécutable de création du .h est dans le dossier **param.h**
+
+Pour compiler et utiliser les programmes arduino avec visual studio, il faudra installer l'extension Arduino directement depuis Visual Studio. 
