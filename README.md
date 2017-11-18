@@ -14,6 +14,7 @@ git clone --recursive https://github.com/Euxiniar/Projet-Exia-Hexart-Care.git
 ```
 git remote add upstream https://github.com/Euxiniar/Projet-Exia-Hexart-Care.git
 ```
-Lancez alors la solution **"Tous les projets.sln"**
+Lancez alors la solution **"Tous les programs.sln"**
+Si la compilation ne fonctionne pas, il faudra cliquer droit sur le projet selectionné, et le recibler.
 
 Pour accéder aux ressources, ouvrez le dossier montages
