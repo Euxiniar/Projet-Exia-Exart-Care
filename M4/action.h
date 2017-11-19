@@ -23,7 +23,7 @@ struct PoulDonnees
 // Fonction qui lit le fichier
 void lireFichier(struct PoulDonnees listePouls[]);
 // Fonction qui permet d'avoir le nombre d'elements d'un tableau de donnees liees au poul
-int getTailleListePouls(struct PoulDonnees listePouls[]);
+int getTailleTabPouls(struct PoulDonnees listePouls[]);
 // Affiche les donnees d'un tableau de poul
 void affichage_listePouls(struct PoulDonnees listePouls[], int *tailleTab);
 // Fonction qui inverse deux elements dans un tableau de pouls
