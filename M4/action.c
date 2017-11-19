@@ -200,8 +200,6 @@ void recherchePoulsSelonTemps(struct PoulDonnees listePouls[], int *tailleTab, i
 		}
 	}
 	// Le tableau passe en parametre ne contient plus que les elements du buffer
-	// Suppression des valeurs du tableau
-	clearTabPoulDonnees(listePouls);
 	// Nouveau remplissage du tableau
 	copyTabPoulDonnees(buf, tailleTab, listePouls);
 	// Mise a jour de la taille du tableau
