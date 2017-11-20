@@ -3,17 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "M2 Coeur_LEDs", "M2\Coeur_LEDs.vcxproj", "{C5F80730-F44F-4478-BDAE-6634EFC2CA88}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "M2 Generation param.h", "M2 Generation param.h\Generation param.h.vcxproj", "{B03F404F-F6E3-4E64-ACE8-15E3DB8F670D}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "M4 Tri Recherche en C (V. Tableau)", "M4\module Tri Recherche en C (V. Tableau).vcxproj", "{795A3CE1-78AF-4AA2-BB6C-48558DB6332F}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "M1 Module_cardio_generation_alea", "M1 Module_cardio_generation_alea\Sketch1.vcxproj", "{BC8DA584-8DE5-4291-BE10-3366E6C5C954}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Fusion M1 M2", "Project1\Project1.vcxproj", "{FC7F4F19-3747-4F21-8194-685219BDF9B5}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "fusion2", "fusion2\fusion2.vcxproj", "{63155FBF-4D6C-451C-A36A-FA6CCEEAEDEA}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "M2 Coeur_LEDs", "M2\Coeur_LEDs.vcxproj", "{C5F80730-F44F-4478-BDAE-6634EFC2CA88}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,12 +19,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Debug|x64.ActiveCfg = Debug|Win32
-		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Debug|x86.ActiveCfg = Debug|Win32
-		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Debug|x86.Build.0 = Debug|Win32
-		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Release|x64.ActiveCfg = Release|Win32
-		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Release|x86.ActiveCfg = Release|Win32
-		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Release|x86.Build.0 = Release|Win32
 		{B03F404F-F6E3-4E64-ACE8-15E3DB8F670D}.Debug|x64.ActiveCfg = Debug|x64
 		{B03F404F-F6E3-4E64-ACE8-15E3DB8F670D}.Debug|x64.Build.0 = Debug|x64
 		{B03F404F-F6E3-4E64-ACE8-15E3DB8F670D}.Debug|x86.ActiveCfg = Debug|Win32
@@ -51,20 +41,14 @@ Global
 		{BC8DA584-8DE5-4291-BE10-3366E6C5C954}.Release|x64.ActiveCfg = Release|Win32
 		{BC8DA584-8DE5-4291-BE10-3366E6C5C954}.Release|x86.ActiveCfg = Release|Win32
 		{BC8DA584-8DE5-4291-BE10-3366E6C5C954}.Release|x86.Build.0 = Release|Win32
-		{FC7F4F19-3747-4F21-8194-685219BDF9B5}.Debug|x64.ActiveCfg = Debug|x64
-		{FC7F4F19-3747-4F21-8194-685219BDF9B5}.Debug|x64.Build.0 = Debug|x64
-		{FC7F4F19-3747-4F21-8194-685219BDF9B5}.Debug|x86.ActiveCfg = Debug|Win32
-		{FC7F4F19-3747-4F21-8194-685219BDF9B5}.Debug|x86.Build.0 = Debug|Win32
-		{FC7F4F19-3747-4F21-8194-685219BDF9B5}.Release|x64.ActiveCfg = Release|x64
-		{FC7F4F19-3747-4F21-8194-685219BDF9B5}.Release|x64.Build.0 = Release|x64
-		{FC7F4F19-3747-4F21-8194-685219BDF9B5}.Release|x86.ActiveCfg = Release|Win32
-		{FC7F4F19-3747-4F21-8194-685219BDF9B5}.Release|x86.Build.0 = Release|Win32
-		{63155FBF-4D6C-451C-A36A-FA6CCEEAEDEA}.Debug|x64.ActiveCfg = Debug|Win32
-		{63155FBF-4D6C-451C-A36A-FA6CCEEAEDEA}.Debug|x86.ActiveCfg = Debug|Win32
-		{63155FBF-4D6C-451C-A36A-FA6CCEEAEDEA}.Debug|x86.Build.0 = Debug|Win32
-		{63155FBF-4D6C-451C-A36A-FA6CCEEAEDEA}.Release|x64.ActiveCfg = Release|Win32
-		{63155FBF-4D6C-451C-A36A-FA6CCEEAEDEA}.Release|x86.ActiveCfg = Release|Win32
-		{63155FBF-4D6C-451C-A36A-FA6CCEEAEDEA}.Release|x86.Build.0 = Release|Win32
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Debug|x64.ActiveCfg = Debug|Win32
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Debug|x86.ActiveCfg = Debug|Win32
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Debug|x86.Build.0 = Debug|Win32
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Debug|x86.Deploy.0 = Debug|Win32
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Release|x64.ActiveCfg = Release|Win32
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Release|x86.ActiveCfg = Release|Win32
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Release|x86.Build.0 = Release|Win32
+		{C5F80730-F44F-4478-BDAE-6634EFC2CA88}.Release|x86.Deploy.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
