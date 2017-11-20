@@ -14,35 +14,35 @@ Author:	Charles
 
 #define TAILLETAB 100
 
-struct PoulDonnees
+struct PoulsDonnees
 {
-	int poul;
+	int pouls;
 	int temps;
 };
 
 // Fonction qui lit le fichier
-void lireFichier(struct PoulDonnees listePouls[]);
+void lireFichier(struct PoulsDonnees listePouls[]);
 // Fonction qui permet d'avoir le nombre d'elements d'un tableau de donnees liees au poul
-int getTailleTabPouls(struct PoulDonnees listePouls[]);
+int getTailleTabPouls(struct PoulsDonnees listePouls[]);
 // Affiche les donnees d'un tableau de poul
-void affichage_listePouls(struct PoulDonnees listePouls[], int *tailleTab);
+void affichage_listePouls(struct PoulsDonnees listePouls[], int *tailleTab);
 // Fonction qui inverse deux elements dans un tableau de pouls
-void triABulles(struct PoulDonnees listePouls[], int *permute, int caseSelect);
+void triABulles(struct PoulsDonnees listePouls[], int *permute, int caseSelect);
 // Fonction qui effectue un tri croissant selon le poul et selon le temps
-void triCroissant(struct PoulDonnees listePouls[], int *tailleTab, int poulOuTemps);
+void triCroissant(struct PoulsDonnees listePouls[], int *tailleTab, int poulOuTemps);
 // Fonction qui effectue un tri decroissant selon le poul et selon le temps
-void triDecroissant(struct PoulDonnees listePouls[], int *tailleTab, int poulOuTemps);
+void triDecroissant(struct PoulsDonnees listePouls[], int *tailleTab, int poulOuTemps);
 // Fonction qui copie un tableau de pouls dans un second tableau de pouls
-void copyTabPoulDonnees(struct PoulDonnees listePoulsToCopy[], int *tailleTab, struct PoulDonnees tabQuiALaCopie[]);
+void copyTabPoulDonnees(struct PoulsDonnees listePoulsToCopy[], int *tailleTab, struct PoulsDonnees tabQuiALaCopie[]);
 // Fonction qui efface un tableau de pouls (qui mets les valeurs a -1)
-void clearTabPoulDonnees(struct PoulDonnees listePouls[]);
+void clearTabPoulDonnees(struct PoulsDonnees listePouls[]);
 // Fonction qui recherche des pouls selon un temps demande)
-void recherchePoulsSelonTemps(struct PoulDonnees listePouls[], int *tailleTab, int temps);
+void recherchePoulsSelonTemps(struct PoulsDonnees listePouls[], int *tailleTab, int temps);
 // Fonction qui permet d'avoir une moyenne de pouls dans une tranche de temps
-void getMoyennePoulsSelonTemps(struct PoulDonnees listePouls[], 
+void getMoyennePoulsSelonTemps(struct PoulsDonnees listePouls[], 
 	int *tailleTab, int tempsMin, 
 	int tempsMax, double *poulMoyen);
 // Fonction qui permet de voir le poul minimum et maximum d'un tableau de pouls
-void showMaxAndMin(struct PoulDonnees listePouls[], int *tailleTab);
+void showMaxAndMin(struct PoulsDonnees listePouls[], int *tailleTab);
 //Fonction qui affiche la date de creation du fichier
 void affichage_date();

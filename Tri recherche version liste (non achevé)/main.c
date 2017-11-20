@@ -6,15 +6,15 @@
 
 #define TAILLETAB 100
 
-struct PoulDonnees
+struct PoulsDonnees
 {
-	int poul;
+	int pouls;
 	int temps;
-	struct PoulDonnees *next;
-	struct PoulDonnees *last;
+	struct PoulsDonnees *next;
+	struct PoulsDonnees *last;
 };
 
-void libererDonneesPoul(struct PoulDonnees **listePouls)
+void libererDonneesPoul(struct PoulsDonnees **listePouls)
 {
 		free(listePouls[0]);
 }
@@ -22,12 +22,12 @@ void libererDonneesPoul(struct PoulDonnees **listePouls)
 // Crée une transition avec un character et un état final
 // c  - caractère de la transition
 // e2 - état suivant après la lecture du caractère c
-struct PoulDonnees *creerDonneePoul(int poul, int temps)
+struct PoulsDonnees *creerDonneePoul(int poul, int temps)
 {
-	struct PoulDonnees *t = NULL;
+	struct PoulsDonnees *t = NULL;
 	//allouer la transition et assigner les valeurs
-	t = malloc(sizeof(struct PoulDonnees));
-	t->poul = poul;
+	t = malloc(sizeof(struct PoulsDonnees));
+	t->pouls = poul;
 	t->temps = temps;
 	t->next = NULL;
 
@@ -37,7 +37,7 @@ struct PoulDonnees *creerDonneePoul(int poul, int temps)
 // Ajout une transition dans l'automate. La transition sera rajoutée par la tête de la liste
 // e1  - etat initial de la transition. L'état correspond à l'indice du tableau 'automate'
 // t - transition
-void ajouterDonneePoul(struct PoulDonnees **listePouls, struct PoulDonnees *donneePoul)
+void ajouterDonneePoul(struct PoulsDonnees **listePouls, struct PoulsDonnees *donneePoul)
 {
 	if (listePouls[0] == NULL)
 	{
@@ -51,12 +51,12 @@ void ajouterDonneePoul(struct PoulDonnees **listePouls, struct PoulDonnees *donn
 	}
 }
 
-void lireFichier(struct PoulDonnees **listePouls)
+void lireFichier(struct PoulsDonnees **listePouls)
 {
 	FILE *f = NULL; // représente un fichier en C
 	int poul, temps; // e1 etat initial d'une transition et e2 état final d'une transition
 	char tab[TAILLETAB]; // Chaîne de caractères qui nous servira pour la lecture ligne par ligne du fichier (~buffer de lecture)
-	struct PoulDonnees *t = NULL; // Pointeur vers une transition
+	struct PoulsDonnees *t = NULL; // Pointeur vers une transition
 
 	// Ouverture du du fichier
 	f = fopen("./dataPouls.csv", "r");
@@ -86,22 +86,22 @@ void lireFichier(struct PoulDonnees **listePouls)
 	fclose(f);
 }
 
-void affichage_csv(struct PoulDonnees *listePouls)
+void affichage_csv(struct PoulsDonnees *listePouls)
 {
-	struct PoulDonnees *buf = listePouls;
+	struct PoulsDonnees *buf = listePouls;
 	while (buf != NULL)
 	{
-		printf("%d %d\n", buf->poul, buf->temps);
+		printf("%d %d\n", buf->pouls, buf->temps);
 		buf = listePouls->next;
 		listePouls = listePouls->next;
 	}
 }
 
-void tri_bulles(struct PoulDonnees *listePouls, struct PoulDonnees **poulsTries, int sens)
+void tri_bulles(struct PoulsDonnees *listePouls, struct PoulsDonnees **poulsTries, int sens)
 {
 }
 
-struct PoulDonnees recherche(int maxOrMin, struct PoulDonnees **poulsTries)
+struct PoulsDonnees recherche(int maxOrMin, struct PoulsDonnees **poulsTries)
 {
 	return *poulsTries[0];
 }
@@ -113,8 +113,8 @@ int menu()
 
 int main()
 {
-	struct PoulDonnees *listePouls[1];
-	struct PoulDonnees *poulsTries[1];
+	struct PoulsDonnees *listePouls[1];
+	struct PoulsDonnees *poulsTries[1];
 	int maxOrMin = 0;
 	listePouls[0] = NULL;
 	poulsTries[0] = NULL;

@@ -6,7 +6,7 @@ Author:	Thomas
 
 #include "menu.h"
 
-void showMenu(struct PoulDonnees listePouls[], int *tailleTab)
+void showMenu(struct PoulsDonnees listePouls[], int *tailleTab)
 {
 	// Creation des variables locales
 	int choix;

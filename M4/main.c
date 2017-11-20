@@ -10,8 +10,8 @@ Author:	Charles et Thomas
 // Definiton des tableaux de structures et acquisition de leur taille
 int main()
 {
-	struct PoulDonnees listePouls[TAILLETAB];
-	struct PoulDonnees listePoulsCopy[TAILLETAB];
+	struct PoulsDonnees listePouls[TAILLETAB];
+	struct PoulsDonnees listePoulsCopy[TAILLETAB];
 	int maxOrMin = 0;
 	lireFichier(listePouls);
 	int tailleListePouls = getTailleTabPouls(listePouls);

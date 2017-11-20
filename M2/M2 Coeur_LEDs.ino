@@ -13,7 +13,7 @@ void setup() {
 	{
 		pinMode(tab[i], OUTPUT);
 	}
-	pinMode(0, INPUT);
+	pinMode(A0, INPUT);
 }
 
 // the loop function runs over and over again until power down or reset

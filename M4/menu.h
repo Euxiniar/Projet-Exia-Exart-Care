@@ -14,4 +14,4 @@ Author:	Thomas
 #include "action.h"
 
 // Fonction affichant le menu et gerant les appels des fonctions
-void showMenu(struct PoulDonnees listePoul[], int *tailleTab);
+void showMenu(struct PoulsDonnees listePoul[], int *tailleTab);

@@ -6,10 +6,10 @@ Author:	Charles
 
 #include "action.h"
 
-void lireFichier(struct PoulDonnees listePouls[])
+void lireFichier(struct PoulsDonnees listePouls[])
 {
 	FILE *f = NULL;
-	int poul, temps;
+	int pouls, temps;
 	char tab[TAILLETAB];
 
 	// Ouverture du fichier
@@ -27,13 +27,13 @@ void lireFichier(struct PoulDonnees listePouls[])
 	{
 		static int i = 0;
 
-		// Stockage du poul dans des variables tampons
-		sscanf(tab, "%d ;%d", &poul, &temps);
+		// Stockage du pouls dans des variables tampons
+		sscanf(tab, "%d ;%d", &pouls, &temps);
 
 		// Puis stockage dans le tableau de structure
 		if (tab[0] != '\n')
 		{
-			listePouls[i].poul = poul;
+			listePouls[i].pouls = pouls;
 			listePouls[i].temps = temps;
 		}
 		i++;
@@ -41,22 +41,22 @@ void lireFichier(struct PoulDonnees listePouls[])
 	fclose(f);
 }
 
-int getTailleTabPouls(struct PoulDonnees listePouls[])
+int getTailleTabPouls(struct PoulsDonnees listePouls[])
 {
 	int i = 0;
 	// Tant que les valeurs de la structure select du pouls ne sont pas negatives, c'est que la structure est pleine
-	while (listePouls[i].poul >= 0)
+	while (listePouls[i].pouls >= 0)
 	{
 		i++;
 	}
 	return i;
 }
 
-void affichage_listePouls(struct PoulDonnees listePouls[], int *tailleTab)
+void affichage_listePouls(struct PoulsDonnees listePouls[], int *tailleTab)
 {
 	for (int i = 0; i < *tailleTab; i++)
 	{
-		printf("Poul : %d, Temps : %d\n", listePouls[i].poul, listePouls[i].temps);
+		printf("Poul : %d, Temps : %d\n", listePouls[i].pouls, listePouls[i].temps);
 	}
 }
 
@@ -81,16 +81,16 @@ void affichage_date()
 	printf("La date de mesure a ete enregistree le %s", tab);
 }
 
-void triABulles(struct PoulDonnees listePouls[], int *permute, int caseSelect)
+void triABulles(struct PoulsDonnees listePouls[], int *permute, int caseSelect)
 {
-	struct PoulDonnees temp;
+	struct PoulsDonnees temp;
 	temp = listePouls[caseSelect - 1];
 	listePouls[caseSelect - 1] = listePouls[caseSelect];
 	listePouls[caseSelect] = temp;
 	*permute = 1;
 }
 
-void triCroissant(struct PoulDonnees listePouls[], int *tailleTab, int poulOuTemps)
+void triCroissant(struct PoulsDonnees listePouls[], int *tailleTab, int poulOuTemps)
 {
 	int permute, j = 0;
 
@@ -103,7 +103,7 @@ void triCroissant(struct PoulDonnees listePouls[], int *tailleTab, int poulOuTem
 			{
 				if (poulOuTemps == 0)
 				{
-					if (listePouls[i - 1].poul > listePouls[i].poul)
+					if (listePouls[i - 1].pouls > listePouls[i].pouls)
 					{
 						triABulles(listePouls, &permute, i);
 					}
@@ -125,7 +125,7 @@ void triCroissant(struct PoulDonnees listePouls[], int *tailleTab, int poulOuTem
 	} while (permute);
 }
 
-void triDecroissant(struct PoulDonnees listePouls[], int *tailleTab, int poulOuTemps)
+void triDecroissant(struct PoulsDonnees listePouls[], int *tailleTab, int poulOuTemps)
 {
 	int permute, j = 0;
 	do
@@ -137,7 +137,7 @@ void triDecroissant(struct PoulDonnees listePouls[], int *tailleTab, int poulOuT
 			{
 				if (poulOuTemps == 0)
 				{
-					if (listePouls[i - 1].poul < listePouls[i].poul)
+					if (listePouls[i - 1].pouls < listePouls[i].pouls)
 					{
 						// Inversement de l'element avec le precedent
 						triABulles(listePouls, &permute, i);
@@ -161,7 +161,7 @@ void triDecroissant(struct PoulDonnees listePouls[], int *tailleTab, int poulOuT
 	} while (permute);
 }
 
-void copyTabPoulDonnees(struct PoulDonnees listePoulsToCopy[], int *tailleTab, struct PoulDonnees tabQuiALaCopie[])
+void copyTabPoulDonnees(struct PoulsDonnees listePoulsToCopy[], int *tailleTab, struct PoulsDonnees tabQuiALaCopie[])
 {
 	// Permet de vider le tableau et lui redonner la bonne taille
 	clearTabPoulDonnees(tabQuiALaCopie);
@@ -174,21 +174,21 @@ void copyTabPoulDonnees(struct PoulDonnees listePoulsToCopy[], int *tailleTab, s
 	}
 }
 
-void clearTabPoulDonnees(struct PoulDonnees listePouls[])
+void clearTabPoulDonnees(struct PoulsDonnees listePouls[])
 {
 	int i = 0;
 	// Definition de tous les elemnts a -1
-	while (listePouls[i].poul >= 0)
+	while (listePouls[i].pouls >= 0)
 	{
-		listePouls[i].poul = -1;
+		listePouls[i].pouls = -1;
 		listePouls[i].temps = -1;
 		i++;
 	}
 }
 
-void recherchePoulsSelonTemps(struct PoulDonnees listePouls[], int *tailleTab, int temps)
+void recherchePoulsSelonTemps(struct PoulsDonnees listePouls[], int *tailleTab, int temps)
 {
-	struct PoulDonnees buf[TAILLETAB];
+	struct PoulsDonnees buf[TAILLETAB];
 	
 	int y = 0;
 	for (int i = 0; i < *tailleTab; i++)
@@ -206,9 +206,9 @@ void recherchePoulsSelonTemps(struct PoulDonnees listePouls[], int *tailleTab, i
 	*tailleTab = getTailleTabPouls(listePouls);
 }
 
-void getMoyennePoulsSelonTemps(struct PoulDonnees listePouls[], int * tailleTab, int tempsMin, int tempsMax, double *poulMoyen)
+void getMoyennePoulsSelonTemps(struct PoulsDonnees listePouls[], int * tailleTab, int tempsMin, int tempsMax, double *poulMoyen)
 {
-	struct PoulDonnees buf[TAILLETAB];
+	struct PoulsDonnees buf[TAILLETAB];
 	int tailleBuf = 0;
 	int sum = 0;
 
@@ -227,26 +227,26 @@ void getMoyennePoulsSelonTemps(struct PoulDonnees listePouls[], int * tailleTab,
 	// Calcul de la somme des pouls dans le buffer
 	for (int i = 0; i < tailleBuf; i++)
 	{
-		sum += buf[i].poul;
+		sum += buf[i].pouls;
 	}
 	// Calcul de la somme des pouls divisee par le nombre d'elements
 	*poulMoyen = (double)sum / (double)tailleBuf;
 }
 
-void showMaxAndMin(struct PoulDonnees listePouls[], int * tailleTab)
+void showMaxAndMin(struct PoulsDonnees listePouls[], int * tailleTab)
 {
 	int min, max;
 	if (*tailleTab > 0)
 	{
-		max = listePouls[0].poul;
-		min = listePouls[0].poul;
+		max = listePouls[0].pouls;
+		min = listePouls[0].pouls;
 	}
 	for (int i = 0; i < *tailleTab; i++)
 	{
 		// Modification du poul si le poul max est inferieur au poul selectionne
-		max = (max < listePouls[i].poul ? listePouls[i].poul : max);
+		max = (max < listePouls[i].pouls ? listePouls[i].pouls : max);
 		// Modification du poul si le poul min est superieur au poul selectionne
-		min = (min > listePouls[i].poul ? listePouls[i].poul : min);
+		min = (min > listePouls[i].pouls ? listePouls[i].pouls : min);
 	}
 	printf("Le poul minimum est : %d, le poul maximum est : %d", min, max);
 }
