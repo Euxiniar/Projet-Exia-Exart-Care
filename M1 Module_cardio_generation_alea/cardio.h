@@ -24,4 +24,4 @@ void calculPouls(int valeurActuelle, int *valeurPrecedente, int *tempsPrecedent)
 void recupDonnees(int valeurActuelle);
 
 //Permet de simuler des valeurs de pouls en l'absence des données du capteur
-int generateAlea();
+int simulationPouls();
