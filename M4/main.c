@@ -14,7 +14,7 @@ int main()
 	struct PoulDonnees listePoulsCopy[TAILLETAB];
 	int maxOrMin = 0;
 	lireFichier(listePouls);
-	int tailleListePouls = getTailleListePouls(listePouls);
+	int tailleListePouls = getTailleTabPouls(listePouls);
 
 	copyTabPoulDonnees(listePouls, &tailleListePouls, listePoulsCopy);
 	showMenu(listePoulsCopy, &tailleListePouls);

@@ -41,7 +41,7 @@ void lireFichier(struct PoulDonnees listePouls[])
 	fclose(f);
 }
 
-int getTailleListePouls(struct PoulDonnees listePouls[])
+int getTailleTabPouls(struct PoulDonnees listePouls[])
 {
 	int i = 0;
 	// Tant que les valeurs de la structure select du pouls ne sont pas negatives, c'est que la structure est pleine
@@ -165,7 +165,7 @@ void copyTabPoulDonnees(struct PoulDonnees listePoulsToCopy[], int *tailleTab, s
 {
 	// Permet de vider le tableau et lui redonner la bonne taille
 	clearTabPoulDonnees(tabQuiALaCopie);
-	*tailleTab = getTailleListePouls(listePoulsToCopy);
+	*tailleTab = getTailleTabPouls(listePoulsToCopy);
 
 	// Copie de chaque element dans le nouveau tableau
 	for (int i = 0; i < *tailleTab; i++)
@@ -200,12 +200,10 @@ void recherchePoulsSelonTemps(struct PoulDonnees listePouls[], int *tailleTab, i
 		}
 	}
 	// Le tableau passe en parametre ne contient plus que les elements du buffer
-	// Suppression des valeurs du tableau
-	clearTabPoulDonnees(listePouls);
 	// Nouveau remplissage du tableau
 	copyTabPoulDonnees(buf, tailleTab, listePouls);
 	// Mise a jour de la taille du tableau
-	*tailleTab = getTailleListePouls(listePouls);
+	*tailleTab = getTailleTabPouls(listePouls);
 }
 
 void getMoyennePoulsSelonTemps(struct PoulDonnees listePouls[], int * tailleTab, int tempsMin, int tempsMax, double *poulMoyen)
@@ -224,7 +222,7 @@ void getMoyennePoulsSelonTemps(struct PoulDonnees listePouls[], int * tailleTab,
 			y++;
 		}
 	}
-	tailleBuf = getTailleListePouls(buf);
+	tailleBuf = getTailleTabPouls(buf);
 
 	// Calcul de la somme des pouls dans le buffer
 	for (int i = 0; i < tailleBuf; i++)

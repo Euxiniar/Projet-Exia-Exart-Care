@@ -1,5 +1,5 @@
 #pragma once
 
-#define modeAffichage 3
-#define nbLedsAllumees 2
-#define ledAllumee 3
+#define modeAffichage 0
+#define nbLedsAllumees -1
+#define ledAllumee -1

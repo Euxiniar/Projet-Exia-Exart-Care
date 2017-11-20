@@ -23,7 +23,7 @@ struct PoulDonnees
 // Fonction qui lit le fichier
 void lireFichier(struct PoulDonnees listePouls[]);
 // Fonction qui permet d'avoir le nombre d'elements d'un tableau de donnees liees au poul
-int getTailleListePouls(struct PoulDonnees listePouls[]);
+int getTailleTabPouls(struct PoulDonnees listePouls[]);
 // Affiche les donnees d'un tableau de poul
 void affichage_listePouls(struct PoulDonnees listePouls[], int *tailleTab);
 // Fonction qui inverse deux elements dans un tableau de pouls
@@ -39,8 +39,10 @@ void clearTabPoulDonnees(struct PoulDonnees listePouls[]);
 // Fonction qui recherche des pouls selon un temps demande)
 void recherchePoulsSelonTemps(struct PoulDonnees listePouls[], int *tailleTab, int temps);
 // Fonction qui permet d'avoir une moyenne de pouls dans une tranche de temps
-void getMoyennePoulsSelonTemps(struct PoulDonnees listePouls[], int *tailleTab, int tempsMin, int tempsMax, double *poulMoyen);
+void getMoyennePoulsSelonTemps(struct PoulDonnees listePouls[], 
+	int *tailleTab, int tempsMin, 
+	int tempsMax, double *poulMoyen);
 // Fonction qui permet de voir le poul minimum et maximum d'un tableau de pouls
 void showMaxAndMin(struct PoulDonnees listePouls[], int *tailleTab);
-//Fonction qui affiche la date de cration du fichier
+//Fonction qui affiche la date de creation du fichier
 void affichage_date();
