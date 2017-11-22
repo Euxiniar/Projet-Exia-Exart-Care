@@ -12,7 +12,7 @@ git clone --recursive https://github.com/Euxiniar/Projet-Exia-Hexart-Care.git
 
 - Pour pouvoir tenir à jour votre répertoire, tapez cette commande
 ```
-git remote add upstream https://github.com/Euxiniar/Projet-Exia-Hexart-Care.git
+git pull
 ```
 Lancez alors la solution **"Tous les programs.sln"**
 Si la compilation ne fonctionne pas, il faudra cliquer droit sur le projet selectionné, et le recibler.
